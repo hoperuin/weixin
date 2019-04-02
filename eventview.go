@@ -22,6 +22,7 @@ type EventScancodePush struct {
 func NewEventScancodePush(m *Message) *EventScancodePush {
 	return &EventScancodePush{
 		EventBase:  EventBase{nil, m.ToUserName, m.FromUserName, m.CreateTime, m.MsgType, m.Event},
+		EventKey:   m.EventKey,
 		ScanType:   m.ScanType,
 		ScanResult: m.ScanResult,
 	}
@@ -39,6 +40,7 @@ type EventScancodeWaitmsg struct {
 func NewEventScancodeWaitmsg(m *Message) *EventScancodeWaitmsg {
 	return &EventScancodeWaitmsg{
 		EventBase:  EventBase{nil, m.ToUserName, m.FromUserName, m.CreateTime, m.MsgType, m.Event},
+		EventKey:   m.EventKey,
 		ScanType:   m.ScanType,
 		ScanResult: m.ScanResult,
 	}

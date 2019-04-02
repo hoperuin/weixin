@@ -112,14 +112,14 @@ type Message struct {
 	// 事件类型，scancode_push/scancode_waitmsg
 	// Event        EventType // 事件类型，scancode_push
 	// EventKey     string    // 事件KEY值，由开发者在创建菜单时设定
-	ScanType   string `json:"ScanCodeInfo>ScanType"`   // 扫描类型，一般是qrcode
-	ScanResult string `json:"ScanCodeInfo>ScanResult"` // 扫描结果，即二维码对应的字符串信息
+	ScanType   string `xml:"ScanCodeInfo>ScanType"`   // 扫描类型，一般是qrcode
+	ScanResult string `xml:"ScanCodeInfo>ScanResult"` // 扫描结果，即二维码对应的字符串信息
 
 	// 事件类型，pic_sysphoto
 	// Event      EventType // 事件类型，pic_sysphoto
 	// EventKey   string    // 事件KEY值，由开发者在创建菜单时设定
-	Count      int      `json:"SendPicsInfo>Count"`                  // 发送的图片数量
-	PicMd5Sums []string `json:"SendPicsInfo>PicList>item>PicMd5Sum"` // 图片的MD5值，开发者若需要，可用于验证接收到图片
+	Count      int      `xml:"SendPicsInfo>Count"`                  // 发送的图片数量
+	PicMd5Sums []string `xml:"SendPicsInfo>PicList>item>PicMd5Sum"` // 图片的MD5值，开发者若需要，可用于验证接收到图片
 
 	LocationX2 float64 `xml:"SendLocationInfo>Location_X,omitempty"` // 地理位置维度
 	LocationY2 float64 `xml:"SendLocationInfo>Location_Y,omitempty"` // 地理位置经度
